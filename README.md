@@ -13,7 +13,7 @@ Nevertheless , Installation steps are as follows:
 - [Optional] Setup virual environment.
 - Install all the dependencies:
   1.  for linux: `pip3 install -r requirements.txt`.
-  2.  for win: `pip instalal -r requirements.txt`.
+  2.  for win: `pip install -r requirements.txt`.
 - Create database in PostgreSQL.
 - Rename `example_config.py` to `config.py` and paste your discord token and stuff.
 
