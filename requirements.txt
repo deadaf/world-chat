@@ -1,0 +1,4 @@
+asyncpg
+discord.py
+# jishaku is optional
+jishaku 
