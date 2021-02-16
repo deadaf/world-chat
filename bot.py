@@ -32,17 +32,14 @@ from discord.flags import MemberCacheFlags
 
 async def get_prefix(bot, message):
     if not message.guild:
-        custom_prefix = 'w!'
-        return custom_prefix
+        prefix = 'w!'
 
-    try:
-        prefix = bot.prefixes[message.guild.id]
-        custom_prefix = prefix
-        return commands.when_mentioned_or(custom_prefix)(bot, message)
+    elif message.guild:
+        prefix = bot.prefixes.get(message.guild.id) or "w!" #Just in case you dont have the prefix cached.
 
-    except TypeError:
-        return
+    return commands.when_mentioned_or(prefix)(bot, message)
 
+    
 intents = discord.Intents.default()
 intents.members=True
 bot = commands.Bot(command_prefix=get_prefix,
